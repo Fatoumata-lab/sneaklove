@@ -1,7 +1,7 @@
 require("dotenv").config();
-require("./../config/mongodb");
+require("../config/mongodb");
 
-const SneakerModel = require ("./../models/Sneaker");
+const SneakerModel = require("../models/Sneaker");
 
 const sneakers=[
     {
@@ -11,7 +11,6 @@ const sneakers=[
     description: "Blue with red stripes",
     price: 120,
     category:  "kids",
-    
     },
 
     {
@@ -21,7 +20,6 @@ const sneakers=[
     description: "white with blue",
     price: 130,
     category: "men", 
-   
     },
     {
         name: "Reebok",
@@ -30,6 +28,13 @@ const sneakers=[
     description: "Red with white stripes",
     price: 120,
     category:   "women",
-    id_tags: [1,2,3]
     }
 ];
+
+SneakerModel.insertMany(sneakers)
+  .then((sneakerFromDb) => {
+    console.log(sneakerFromDb);
+  })
+  .catch((error) => {
+    console.log(error);
+  });

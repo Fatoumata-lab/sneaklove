@@ -8,8 +8,8 @@ const sneakerSchema = new Schema({
     description: String,
     price: Number,
     category: { type:String,
-        enum :[men, women, kids]},
-    id_tags: [ObjectId]
+        enum :["men", "women", "kids"]},
+    id_tags: ["ObjectId"]
  
 });
 
